@@ -13,4 +13,4 @@ RUN set -x && \
 
 CMD ./subconverter
 
-EXPOSE 25500
+EXPOSE 80
