@@ -9,8 +9,10 @@ ENV SUB_VER 0.1.1
 RUN set -x && \
     wget --no-check-certificate https://github.com/tindy2013/subconverter/releases/download/v${SUB_VER}/subconverter_linux64.tar.gz && \
     tar xzf subconverter_linux64.tar.gz && \
-    rm subconverter_linux64.tar.gz
-
+    rm subconverter_linux64.tar.gz && \
+    cd subconverter && \
+    sed -i 's/port=25500/port=443/g'  pref.ini
+ 
 CMD ./subconverter
 
-EXPOSE 80
+EXPOSE 443
